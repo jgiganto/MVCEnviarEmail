@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Mail;
 using System.Web;
@@ -47,6 +48,11 @@ namespace MVCEnviarEmail.Controllers
                 correo.IsBodyHtml = true;
                 correo.Priority = MailPriority.Normal;
                 String ruta = Server.MapPath("../Temporal");
+               //Path.GetTempPath() sustituye a Mappath
+               //Path.GetTempPath()
+
+
+
                 fichero.SaveAs(ruta + "\\" + fichero.FileName);
                 Attachment adjunto = new Attachment(ruta + "\\" + fichero.FileName);
                 correo.Attachments.Add(adjunto);
