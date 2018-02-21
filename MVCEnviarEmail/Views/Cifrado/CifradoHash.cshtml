@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "CifradoHash";
+}
+
+<h2>CifradoHash</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        <label>texto a cifrar</label>
+        <input type="text" name="texto" class="form-control" />
+    </div>
+    <div>
+        <label>resultado</label>
+        <textarea rows="5" name="resultado" class="form-control">@ViewBag.Resultado</textarea>
+    </div>
+    <div>
+        <button type="submit" name="accion" value="cifrar" class="btn-success">Cifrar texto</button>
+        <button type="submit" name="accion" value="comparar" class="btn-default">Comparar texto cifrado</button> @*mismo boton distinto value...*@ 
+    </div>
+}
+@Html.Raw(ViewBag.Mensaje)
